@@ -162,6 +162,7 @@ textarea {
 
 html {
   font-family: var(--ff-poppins);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -336,8 +337,12 @@ main {
   transition: var(--transition-2);
 }
 
-.sidebar.active {
+/* .sidebar.active {
   max-height: 405px;
+} */
+
+.sidebar.active {
+  max-height: initial;
 }
 
 .sidebar-info {
@@ -1031,6 +1036,20 @@ img.profile {
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.project-img:hover {
+  transform: scale(1.05);
+}
+
+.project-item-icon-box {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  opacity: 0;
+  z-index: 1;
+  transition: var(--transition-1), opacity 0.3s ease;
 }
 
 .project-img::before {
@@ -1041,7 +1060,7 @@ img.profile {
   width: 100%;
   height: 100%;
   background: transparent;
-  z-index: 1;
+  z-index: 10;
   transition: var(--transition-1);
 }
 
